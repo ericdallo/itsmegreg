@@ -1,1 +1,20 @@
 @import 'base';
+
+.input-container {
+    width: 100%;
+
+    .location {
+        padding-right: 0.5em;
+        color: $location-text;
+    }
+
+    .input {
+        background: transparent;
+        border: none;
+        display: inline-block;
+        outline: none;
+        padding-left: 0.5em;
+
+        
+    }
+}
