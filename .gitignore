@@ -1,0 +1,12 @@
+node_modules
+package-lock.json
+
+static/js/vendor/
+.DS_Store
+
+.idea/
+public
+
+*.css
+*.css.map
+.sass-cache
