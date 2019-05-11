@@ -1,0 +1,84 @@
+@import 'reset';
+@import 'fonts';
+@import 'colors';
+@import 'mixins';
+
+%default-font {
+    font-family: "IBM Plex Mono";
+    color: rgba(white, 0.9f);
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+input,label,span,p,h1,h2,h3,h4,h5,h6,a,button,li,strong,table,figcaption,dt,dd,dl {
+    @extend %default-font;
+}
+
+body {
+    background-color: $terminal-body-background;
+}
+
+.terminal-header {
+    height: 1.6em;
+    background-color: $terminal-bar-background;
+
+    .user-login {
+        font-size: 1em;
+        width: 100%;
+        text-align: center;
+        line-height: 1.6em;
+        font-weight: bold;
+        vertical-align: middle;
+        color: rgba(white, 0.75f);
+    }
+
+    $button-size: 0.7em;
+
+    %button {
+        position: absolute;
+        top: $button-size / 2;
+        width: $button-size;
+        height: $button-size;
+        border-radius: 50%;
+        cursor: pointer;
+
+        @include transition(background-color 0.2s);
+    }
+
+    .minimize {
+        @extend %button;
+
+        right: 3.1em;
+        background-color: $terminal-minimize-button;
+
+        &:hover {
+            background-color: $terminal-minimize-button-hover;
+        }
+    }
+
+    .maximize {
+        @extend %button;
+
+        right: 1.8em;
+        background-color: $terminal-maximize-button;
+
+        &:hover {
+            background-color: $terminal-maximize-button-hover;
+        }
+    }
+
+    .close {
+        @extend %button;
+
+        right: 0.5em;
+        background-color: $terminal-close-button;
+
+        &:hover {
+            background-color: $terminal-close-button-hover;
+        }
+    }
+}
+
+.terminal-body {
+    padding: 1em 0.5em;
+}

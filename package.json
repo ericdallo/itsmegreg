@@ -1,0 +1,23 @@
+{
+  "name": "itsmegreg",
+  "version": "0.1.0",
+  "description": "A static page application simulating an terminal unix",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "harp server src --port 9000",
+    "deploy": "harp compile src docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericdallo/itsmegreg.git"
+  },
+  "keywords": ["node","npm","harp","spa","frontend","front-end","html","html5","css","scss","sass","javascript","js","terminal","unix"],
+  "author": "Eric Dallo",
+  "bugs": {
+    "url": "https://github.com/ericdallo/itsmegreg/issues"
+  },
+  "homepage": "https://ericdallo.github.io/itsmegreg"
+}
