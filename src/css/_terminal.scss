@@ -1,0 +1,117 @@
+.terminal-header {
+    height: 1.6em;
+    background-color: $terminal-bar-background;
+
+    .user-login {
+        font-size: 1em;
+        width: calc(100% - 0.5em);
+        padding-left: 0.5em;
+        line-height: 1.6em;
+        font-weight: bold;
+        vertical-align: middle;
+        color: rgba(white, 0.75f);
+    }
+
+    $button-size: 0.7em;
+
+    %button {
+        position: absolute;
+        top: $button-size / 2;
+        width: $button-size;
+        height: $button-size;
+        border-radius: 50%;
+        cursor: pointer;
+
+        @include transition(background-color 0.2s);
+    }
+
+    .minimize {
+        @extend %button;
+
+        right: 3.1em;
+        background-color: $terminal-minimize-button;
+
+        &:hover {
+            background-color: $terminal-minimize-button-hover;
+        }
+    }
+
+    .maximize {
+        @extend %button;
+
+        right: 1.8em;
+        background-color: $terminal-maximize-button;
+
+        &:hover {
+            background-color: $terminal-maximize-button-hover;
+        }
+    }
+
+    .close {
+        @extend %button;
+
+        right: 0.5em;
+        background-color: $terminal-close-button;
+
+        &:hover {
+            background-color: $terminal-close-button-hover;
+        }
+    }
+}
+
+.terminal-body {
+    padding: 1em 0.5em;
+
+    .digited-text {
+        .text-block {
+            overflow: auto;
+    
+            a {
+                font-size: 1em;
+                text-decoration: underline;
+                padding: 0.2em 0;
+                font-weight: 100;
+            }
+        }
+    }
+    
+    .input-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        line-height: 1rem;
+    
+        .location {
+            padding-right: 0.5em;
+            color: $location-text;
+        }
+    
+        .static-text,
+        .input {
+            background: transparent;
+            border: none;
+            display: inline-block;
+            outline: none;
+            padding-left: 0.5em; 
+            width: 100%;
+            caret-color: white;
+        }
+    }
+
+    .mark {
+        position: fixed;
+        bottom: 0.5em;
+        right: 0.5em;
+    }
+}
+
+@media (min-width: 400px) {
+    .terminal-header {
+        .user-login {
+            text-align: center;
+            padding: 0;
+            width: 100%;
+        }
+    }
+}

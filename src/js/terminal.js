@@ -37,6 +37,10 @@ define('terminal', ['doc'], function($) {
             $digitedTextContainer.html('');
         };
 
+        $(document).on('click', function(e) {
+            $input.focus();
+        });
+
         $(window).on('keydown', function(e) {
 
             var text = $input.val();
