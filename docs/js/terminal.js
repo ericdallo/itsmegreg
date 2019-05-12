@@ -1,4 +1,4 @@
-define('terminal', ['doc'], function($) {
+define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander) {
     'use strict';
 
     var buildShellText = function(text) {
@@ -27,18 +27,14 @@ define('terminal', ['doc'], function($) {
         var write = function(text) {
             var $newText = $(document.createElement('pre'));
             $newText.addClass('text-block');
-
+    
             $newText.html(text);
-
+    
             $digitedTextContainer.append($newText.first());
         };
 
-        var clear = function() {
-            $digitedTextContainer.html('');
-        };
-
-        $(document).on('click', function(e) {
-            $input.focus();
+        $(document).on('click', function() {
+            $input.focus();  
         });
 
         $(window).on('keydown', function(e) {
@@ -48,12 +44,13 @@ define('terminal', ['doc'], function($) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 write(buildShellText(text));
+                write($terminalCommander.issue(text));
                 $input.val('');
             }
 
             if (e.keyCode === 76 && e.ctrlKey) {
                 e.preventDefault();
-                clear();
+                $digitedTextContainer.html('');
             }
 
             if (e.keyCode === 67 && e.ctrlKey) {
