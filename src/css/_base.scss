@@ -11,12 +11,37 @@
     line-height: 1.3em;
 }
 
+%inverted-font {
+    color: rgba(black, 0.9f);
+}
+
 pre,input,label,span,p,h1,h2,h3,h4,h5,h6,a,button,li,strong,table,figcaption,dt,dd,dl {
     @extend %default-font;
 }
 
 body {
     background-color: $terminal-body-background;
+
+    &.inverted {
+        background-color: white;
+
+        pre,input,label,span,p,h1,h2,h3,h4,h5,h6,a,button,li,strong,table,figcaption,dt,dd,dl {
+            @extend %inverted-font;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(white, 0.1f);
+    border-radius: 15px;
 }
 
 .hide {

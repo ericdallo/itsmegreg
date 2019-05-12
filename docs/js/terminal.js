@@ -1,6 +1,9 @@
 define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander) {
     'use strict';
 
+    var history = [],
+        historyPointer = 0;
+
     var buildShellText = function(text) {
         var $parent    = $(document.createElement('div')),
             $container = $(document.createElement('section')).addClass('input-container'),
@@ -18,6 +21,10 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
         
         return $parent.html();
     };
+
+    var saveHistory = function(text) {
+        history.push(text);
+    }
 
     var initTerminal = function() {
         var initText                 = $('#initial-text-block').html(),
@@ -43,6 +50,7 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
         
             if (e.key === 'Enter') {
                 e.preventDefault();
+                saveHistory(text);
                 write(buildShellText(text));
                 write($terminalCommander.issue(text));
                 $input.val('');
@@ -50,13 +58,31 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
 
             if (e.keyCode === 76 && e.ctrlKey) {
                 e.preventDefault();
-                $digitedTextContainer.html('');
+                $terminalCommander.issue('clear');
             }
 
             if (e.keyCode === 67 && e.ctrlKey) {
                 e.preventDefault();
                 write(buildShellText(text));
                 $input.val('');
+            }
+            
+            if (e.keyCode === 38) {
+                e.preventDefault();
+                
+                if (history.length > 0 && historyPointer < history.length) {
+                    var lastCommand = history[history.length - ++historyPointer];
+                    $input.val(lastCommand);
+                }
+            }
+
+            if (e.keyCode === 40) {
+                e.preventDefault();
+                
+                if (historyPointer <= history.length && historyPointer >= 1) {
+                    var redoCommand = history[history.length - --historyPointer];
+                    $input.val(redoCommand);
+                }
             }
         });
 
