@@ -6,7 +6,18 @@
   "directories": {
     "doc": "docs"
   },
+  "dependencies": {
+    "define-async": "1.3.2",
+    "elo7-doc-amd": "1.5.1",
+    "elo7-events-amd": "1.2.1"
+  },
   "scripts": {
+    "copy:doc-amd": "cp node_modules/elo7-doc-amd/doc.js src/js/vendor/doc.js",
+    "copy:async-amd": "cp node_modules/define-async/async-define.js src/js/vendor/async-define.js",
+    "copy:events-amd": "cp node_modules/elo7-events-amd/events-amd.js src/js/vendor/events-amd.js",
+    "copy": "npm run copy:events-amd && npm run copy:async-amd && npm run copy:doc-amd",
+    "precopy": "mkdir -p src/js/vendor",
+    "postinstall": "npm run copy",
     "start": "harp server src --port 9000",
     "deploy": "harp compile src docs"
   },
@@ -14,7 +25,23 @@
     "type": "git",
     "url": "git+https://github.com/ericdallo/itsmegreg.git"
   },
-  "keywords": ["node","npm","harp","spa","frontend","front-end","html","html5","css","scss","sass","javascript","js","terminal","unix"],
+  "keywords": [
+    "node",
+    "npm",
+    "harp",
+    "spa",
+    "frontend",
+    "front-end",
+    "html",
+    "html5",
+    "css",
+    "scss",
+    "sass",
+    "javascript",
+    "js",
+    "terminal",
+    "unix"
+  ],
   "author": "Eric Dallo",
   "bugs": {
     "url": "https://github.com/ericdallo/itsmegreg/issues"

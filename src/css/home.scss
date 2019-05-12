@@ -1,7 +1,21 @@
 @import 'base';
 
+.digited-text {
+    .text-block {
+
+        a {
+            font-size: 1em;
+            text-decoration: underline;
+            padding: 0.2em 0;
+            font-weight: 100;
+        }
+    }
+}
+
 .input-container {
     width: 100%;
+    display: flex;
+    align-items: center;
 
     .location {
         padding-right: 0.5em;
@@ -13,8 +27,8 @@
         border: none;
         display: inline-block;
         outline: none;
-        padding-left: 0.5em;
-
-        
+        padding-left: 0.5em; 
+        width: 100%;
+        caret-color: white;
     }
 }

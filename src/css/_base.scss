@@ -8,14 +8,19 @@
     color: rgba(white, 0.9f);
     font-weight: 400;
     font-size: 1.3em;
+    line-height: 1.3em;
 }
 
-input,label,span,p,h1,h2,h3,h4,h5,h6,a,button,li,strong,table,figcaption,dt,dd,dl {
+pre,input,label,span,p,h1,h2,h3,h4,h5,h6,a,button,li,strong,table,figcaption,dt,dd,dl {
     @extend %default-font;
 }
 
 body {
     background-color: $terminal-body-background;
+}
+
+.hide {
+    display: none;
 }
 
 .terminal-header {
@@ -81,4 +86,10 @@ body {
 
 .terminal-body {
     padding: 1em 0.5em;
+
+    .mark {
+        position: fixed;
+        bottom: 0.5em;
+        right: 0.5em;
+    }
 }

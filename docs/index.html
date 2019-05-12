@@ -7,9 +7,13 @@
     <meta http-equiv="Cache-control" content="public">
     <meta name="viewport" content="width=device-width">
     <meta name="theme-color" content="#1d252c">
-    <link rel="icon" type="image/ico" href="/images/favicon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/ico" href="images/favicon.png" />
+    <link rel="manifest" href="manifest.json" />
     <link href="css/home.css" type="text/css" rel="stylesheet">
+    <script async src="js/vendor/async-define.js"></script>
+    <script async src="js/vendor/events-amd.js"></script>
+    <script async src="js/vendor/doc.js"></script>
+    <script async src="js/terminal.js"></script>
   </head>
 
   <body>
@@ -20,7 +24,32 @@
       <span class="close"></span>
     </header>
     <main class="terminal-body">
-      <p>~/ $ ls</p>
+      <section id="digited-text" class="digited-text">
+    <pre id="initial-text-block" class="text-block hide">
+Welcome to my own terminal v0.1.0 (GNU/Linux 4.9.0-8-amd64 x86_64)
+
+    * Github:    <a target="_blank" href="https://github.com/ericdallo">https://github.com/ericdallo</a>
+    * Linkedin:  <a target="_blank" href="https://www.linkedin.com/in/ericdallo">https://www.linkedin.com/in/ericdallo</a>
+    * Email:     <a target="_blank" href="mailto: ercdll1337@gmail.com">ercdll1337@gmail.com</a>
+
+This terminal gives access to my profissional profile, you can find
+files and links about my carreer or my achievements, and if you want,
+you can contact me with the command 'contact-him'.
+
+Last login: Mon Aug 20 07:45:08 2019
+
+Type 'help' to list the available commands
+    </pre>
+</section>
+<div class="input-container">
+    <section class="input-container">
+        <span class="location">~</span>
+        <span>$</span>
+        <input id="input" class="input">
+    </section>
+</div>
+<script async src="js/home.js"></script>
+      <p class="mark">By Greg™</p>
     </main>
   </body>
 

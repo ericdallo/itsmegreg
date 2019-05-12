@@ -7,9 +7,13 @@
     <meta http-equiv="Cache-control" content="public">
     <meta name="viewport" content="width=device-width">
     <meta name="theme-color" content="#1d252c">
-    <link rel="icon" type="image/ico" href="/images/favicon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/ico" href="images/favicon.png" />
+    <link rel="manifest" href="manifest.json" />
     <link href="css/home.css" type="text/css" rel="stylesheet">
+    <script async src="js/vendor/async-define.js"></script>
+    <script async src="js/vendor/events-amd.js"></script>
+    <script async src="js/vendor/doc.js"></script>
+    <script async src="js/terminal.js"></script>
   </head>
 
   <body>
@@ -21,6 +25,7 @@
     </header>
     <main class="terminal-body">
       <%- yield %>
+      <p class="mark">By Greg™</p>
     </main>
   </body>
 
