@@ -1,3 +1,63 @@
+body {
+    @include transition(transform 0.2s, filter 0.2s);
+}
+
+body.mirrored {
+    %mirror {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+    .terminal-header {
+        .user-login {
+            @extend %mirror;
+        }
+
+        .minimize {
+            left: 3.1em;
+        }
+
+        .maximize {
+            left: 1.8em;
+        }
+
+        .close {
+            left: 0.5em;
+        }
+    }
+
+    .terminal-body {
+        .digited-text {            
+
+            .text-block {
+                @extend %mirror;
+
+                .input-container {
+                    -moz-transform: none;
+                    -o-transform: none;
+                    -webkit-transform: none;
+                    transform: none;
+                    filter: none;
+                    -ms-filter: none;
+                }
+            }
+        }
+
+        .input-container {
+            @extend %mirror;
+        }
+
+        .mark {
+            @extend %mirror;
+            left: 0.5em;
+            right: initial;
+        }
+    }
+}
+
 .terminal-header {
     height: 1.6em;
     background-color: $terminal-bar-background;

@@ -1,4 +1,4 @@
-define(['doc', 'terminal'], function($, $terminal) {
+define(['terminal'], function($terminal) {
     'use strict';
 
     $terminal.bind();

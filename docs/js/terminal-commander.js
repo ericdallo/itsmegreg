@@ -1,5 +1,11 @@
 define('terminal-commander', ['doc'], function($) {
 
+    var $body = $('body');
+
+    var isMirrored = function() {
+        return $body.hasClass('mirrored');
+    };
+
     function isFunction(fn) {
         return fn && typeof fn === "function";
     }
@@ -23,8 +29,10 @@ define('terminal-commander', ['doc'], function($) {
         return command;
     }
 
-    var help                     = $('#help-text-block').html(),
-        $digitedTextContainer    = $('#digited-text');
+    var $digitedTextContainer    = $('#digited-text'),
+        help                     = $('#help-text-block').html(),
+        aboutMeText              = $('#about-me-text-block').html(),
+        personalProjectsText     = $('#personal-projects-text-block').html();
 
     var clear = function() {
         $digitedTextContainer.html('');
@@ -37,25 +45,29 @@ define('terminal-commander', ['doc'], function($) {
     }
 
     var aboutMe = function() {
-        return 'TODO me';
+        return aboutMeText;
     }
 
     var curriculum = function() {
         return 'TODO CV';
     }
 
-    var links = function() {
-        return 'TODO links';
+    var projects = function() {
+        return personalProjectsText;
+    }
+
+    var mirrorMe = function() {
+        $('body').toggleClass('mirrored');
     }
 
     var commands = {
         'help': help,
         'help --hidden': 'do-a-magick                   Just try :x',
-        'do-a-magick': {},
+        'mirror-me': mirrorMe,
         'clear': clear,
         'change-theme': changeTheme,
-        'ls': 'about-me.txt  curriculum.txt  links.txt',
-        'cat': {'about-me.txt': aboutMe, 'curriculum.txt': curriculum, 'links.txt': links, 'error': 'Error: Input the file to read'}
+        'ls': 'about-me.txt  curriculum.txt  personal-projects.csv',
+        'cat': {'about-me.txt': aboutMe, 'curriculum.txt': curriculum, 'personal-projects.csv': projects, 'error': 'Error: Input the file to read'}
     };
 
     var issue = function(text) {
