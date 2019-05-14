@@ -84,6 +84,12 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
                     $input.val(redoCommand);
                 }
             }
+
+            if (e.keyCode === 9) {
+                e.preventDefault();
+                var newText = $terminalCommander.autocomplete(text);
+                $input.val(newText);
+            }
         });
 
         write(initText);

@@ -2,10 +2,6 @@ define('terminal-commander', ['doc'], function($) {
 
     var $body = $('body');
 
-    var isMirrored = function() {
-        return $body.hasClass('mirrored');
-    };
-
     function isFunction(fn) {
         return fn && typeof fn === "function";
     }
@@ -40,7 +36,7 @@ define('terminal-commander', ['doc'], function($) {
     }
 
     var changeTheme = function() {
-        $('body').toggleClass('inverted');
+        $body.toggleClass('inverted');
         return '';
     }
 
@@ -57,12 +53,13 @@ define('terminal-commander', ['doc'], function($) {
     }
 
     var mirrorMe = function() {
-        $('body').toggleClass('mirrored');
+        $body.toggleClass('mirrored');
+        return '';
     }
 
     var commands = {
         'help': help,
-        'help --hidden': 'do-a-magick                   Just try :x',
+        'help --hidden': 'mirror-me                   Just try :o',
         'mirror-me': mirrorMe,
         'clear': clear,
         'change-theme': changeTheme,
@@ -91,7 +88,40 @@ define('terminal-commander', ['doc'], function($) {
         return command;
     };
 
+    var autocomplete = function(text) {
+        var commandAndArgs = text.split(' '),
+            command        = commandAndArgs[0],
+            allCommands    = Object.keys(commands);
+
+        for (i = 0; i < allCommands.length; i++) {
+            if (allCommands[i].startsWith(command)) {
+
+                if (commandAndArgs.length == 2) {
+                    var arg = commandAndArgs[1],
+                        subCommand = commands[command],
+                        subCommandKeys = Object.keys(subCommand);
+
+                    if (arg != "" && subCommand != undefined &&  isObject(subCommand)) {
+                        
+                        for (j = 0; j < subCommandKeys.length; j++) {
+                            if (subCommandKeys[j].startsWith(arg)) {
+                                return allCommands[i] + ' ' + subCommandKeys[j];
+                            }
+                        }
+                    }
+
+                    return text;
+                }
+
+                return allCommands[i];
+            }
+        }
+
+        return text;
+    };
+
     return {
-        'issue': issue
+        'issue': issue,
+        'autocomplete': autocomplete
     };
 });
