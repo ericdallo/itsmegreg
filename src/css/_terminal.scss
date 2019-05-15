@@ -30,6 +30,7 @@ body.mirrored {
     }
 
     .terminal-body {
+
         .digited-text {            
 
             .text-block {
@@ -63,7 +64,7 @@ body.mirrored {
     background-color: $terminal-bar-background;
 
     .user-login {
-        font-size: 1em;
+        font-size: 0.9em;
         width: calc(100% - 0.5em);
         padding-left: 0.5em;
         line-height: 1.6em;
@@ -121,6 +122,8 @@ body.mirrored {
 
 .terminal-body {
     padding: 1em 0.5em;
+    font-size: 0.7em;
+    line-height: 0.7em;
 
     .digited-text {
         .text-block {
@@ -139,8 +142,9 @@ body.mirrored {
         width: 100%;
         display: flex;
         align-items: center;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 0.7rem;
+        line-height: 0.7rem;
+        margin-top: 0.5em;
     
         .location {
             padding-right: 0.5em;
@@ -169,9 +173,22 @@ body.mirrored {
 @media (min-width: 400px) {
     .terminal-header {
         .user-login {
+            font-size: 1em;
             text-align: center;
             padding: 0;
             width: 100%;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .terminal-body {
+        font-size: 1em;
+        line-height: 1em;
+
+        .input-container {
+            font-size: 1rem;
+            line-height: 1rem;
         }
     }
 }
