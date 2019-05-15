@@ -126,8 +126,9 @@ body.mirrored {
     line-height: 0.7em;
 
     .digited-text {
+        overflow: auto;
+        
         .text-block {
-            overflow: auto;
     
             a {
                 font-size: 1em;
