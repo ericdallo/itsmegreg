@@ -164,10 +164,43 @@ body.mirrored {
         }
     }
 
-    .mark {
+    .github {
         position: fixed;
         bottom: 0.5em;
         right: 0.5em;
+        display: flex;
+
+        &:hover {
+            .github-logo {
+                @include transform(rotateY(180deg));
+            }
+        }
+
+        .mark {
+            display: flex;
+            font-size: 1em;
+            line-height: 1.8em;
+            margin-right: 0.5em;
+            vertical-align: middle;
+        }
+
+        .github-logo {
+            @include transition(transform 0.2s);
+            transform-origin: center;
+
+            .path {
+                stroke-dasharray: 1450;
+                stroke-dashoffset: 1450;
+                animation: dash 1s linear forwards;
+            }
+
+            @keyframes dash {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+
     }
 }
 

@@ -26,7 +26,10 @@
     </header>
     <main class="terminal-body">
       <%- yield %>
-      <p class="mark">By Greg™</p>
+      <a target="_blank" href="https://github.com/ericdallo/itsmegreg" class="github">
+        <p class="mark">By Greg™</p>
+        <%- include('github'); %>
+      </a>
     </main>
   </body>
 

@@ -3,3 +3,9 @@
     -moz-transition: $transition;
     transition: $transition;
 }
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    transform: $transform;
+}
