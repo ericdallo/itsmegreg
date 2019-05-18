@@ -1,1 +1,2 @@
-# Its me, Greg
+# A static web app simulating a Unix terminal
+
