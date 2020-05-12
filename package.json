@@ -1,6 +1,6 @@
 {
   "name": "itsmegreg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A static page application simulating an terminal unix",
   "main": "index.js",
   "directories": {
@@ -10,6 +10,9 @@
     "define-async": "1.3.2",
     "elo7-doc-amd": "1.5.1",
     "elo7-events-amd": "1.2.1"
+  },
+  "devDependencies": {
+    "harp": "0.32.0"
   },
   "scripts": {
     "copy:doc-amd": "cp node_modules/elo7-doc-amd/doc.js src/js/vendor/doc.js",

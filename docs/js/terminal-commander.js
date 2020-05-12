@@ -28,7 +28,7 @@ define('terminal-commander', ['doc'], function($) {
     var $digitedTextContainer    = $('#digited-text'),
         help                     = $('#help-text-block').html(),
         aboutMeText              = $('#about-me-text-block').html(),
-        personalProjectsText     = $('#personal-projects-text-block').html();
+        projectsText             = $('#projects-text-block').html();
 
     var clear = function() {
         $digitedTextContainer.html('');
@@ -49,7 +49,7 @@ define('terminal-commander', ['doc'], function($) {
     }
 
     var projects = function() {
-        return personalProjectsText;
+        return projectsText;
     }
 
     var mirrorMe = function() {
@@ -63,8 +63,8 @@ define('terminal-commander', ['doc'], function($) {
         'mirror-me': mirrorMe,
         'clear': clear,
         'change-theme': changeTheme,
-        'ls': 'about-me.txt  curriculum.txt  personal-projects.csv',
-        'cat': {'about-me.txt': aboutMe, 'curriculum.txt': curriculum, 'personal-projects.csv': projects, 'error': 'Error: Input the file to read'}
+        'ls': 'about-me.txt  curriculum.txt  projects.csv',
+        'cat': {'about-me.txt': aboutMe, 'curriculum.txt': curriculum, 'projects.csv': projects, 'error': 'Error: Input the file to read'}
     };
 
     var issue = function(text) {
