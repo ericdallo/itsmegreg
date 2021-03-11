@@ -26,7 +26,7 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
         history.push(text);
     }
 
-    var initTerminal = function() {
+    var bind = function() {
         var initText                 = $('#initial-text-block').html(),
             $digitedTextContainer    = $('#digited-text'),
             $input                   = $('#input');
@@ -54,6 +54,7 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
                 write(buildShellText(text));
                 write($terminalCommander.issue(text));
                 $input.val('');
+                window.scrollTo(0,document.body.scrollHeight);
             }
 
             if (e.keyCode === 76 && e.ctrlKey) {
@@ -96,8 +97,6 @@ define('terminal', ['doc', 'terminal-commander'], function($, $terminalCommander
     };
 
     return {
-        'bind': function() {
-            initTerminal();
-        }
+        'bind': bind
     };
 });

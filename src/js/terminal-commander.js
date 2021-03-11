@@ -28,6 +28,7 @@ define('terminal-commander', ['doc'], function($) {
     var $digitedTextContainer    = $('#digited-text'),
         help                     = $('#help-text-block').html(),
         aboutMeText              = $('#about-me-text-block').html(),
+        cvText                   = $('#cv-text-block').html(),
         projectsText             = $('#projects-text-block').html();
 
     var clear = function() {
@@ -45,7 +46,7 @@ define('terminal-commander', ['doc'], function($) {
     }
 
     var curriculum = function() {
-        return 'TODO CV';
+        return cvText;
     }
 
     var projects = function() {

@@ -5,14 +5,14 @@
 
 %default-font {
     font-family: "IBM Plex Mono";
-    color: rgba(white, 0.9f);
+    color: rgba(white, 0.9);
     font-weight: 400;
     font-size: 1.3em;
     line-height: 1.3em;
 }
 
 %inverted-font {
-    color: rgba(black, 0.9f);
+    color: rgba(black, 0.9);
 }
 
 pre,input,label,span,p,h1,h2,h3,h4,h5,h6,a,button,li,strong,table,figcaption,dt,dd,dl {
@@ -40,7 +40,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(white, 0.1f);
+    background: rgba(white, 0.1);
     border-radius: 15px;
 }
 

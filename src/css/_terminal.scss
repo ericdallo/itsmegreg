@@ -60,17 +60,17 @@ body.mirrored {
 }
 
 .terminal-header {
-    height: 1.6em;
+    height: 2em;
     background-color: $terminal-bar-background;
 
     .user-login {
         font-size: 0.9em;
         width: calc(100% - 0.5em);
         padding-left: 0.5em;
-        line-height: 1.6em;
+        line-height: 2em;
         font-weight: bold;
         vertical-align: middle;
-        color: rgba(white, 0.75f);
+        color: rgba(white, 0.75);
     }
 
     $button-size: 0.7em;
